@@ -1042,7 +1042,13 @@ stripe-express:
     token_response_metadata:
         - stripe_user_id
     proxy:
-        base_url: https://api.stripe.com      
+        base_url: https://api.stripe.com  
+supabase-api:
+    auth_mode: API_KEY
+    proxy:
+        headers:
+            Authorization: Bearer ${apiKey}
+        base_url: https://api.supabase.com
 supabase-oauth: # This is the provider slug for Supabase with OAuth2
     auth_mode: OAUTH2
     authorization_url: https://api.supabase.com/v1/oauth/authorize # Replace with your Supabase OAuth authorization URL
